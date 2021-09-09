@@ -12,7 +12,6 @@ class BookCommentsController < ApplicationController
     @book_new = Book.new
     @book_comments = @book.book_comments
 
-      render "books/show"
     end
   end
 
@@ -20,7 +19,7 @@ class BookCommentsController < ApplicationController
     @book = Book.find(params[:book_id])
   	book_comment = @book.book_comments.find(params[:id])
 		book_comment.destroy
-		redirect_to request.referer
+
     # BookComment.find_by(id: params[:id], book_id: params[:book_id]).destroy
     # redirect_to book_path(params[:book_id])
   end
